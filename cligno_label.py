@@ -27,6 +27,7 @@ while True:
     count2 = 0
     while(count2 < 4):
         print("en phase")
+        
         GPIO.output(LedR, GPIO.HIGH)
         GPIO.output(LedV, GPIO.HIGH)
         time.sleep(0.8)

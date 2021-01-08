@@ -9,8 +9,7 @@ GPIO.setup(LedR, GPIO.OUT)
 GPIO.setup(LedV, GPIO.OUT)
 
 def cligno_dephase(Nb_cligno, tempo1, tempo2):
-    count1 = 0
-    for count1 in range(Nb_cligno):
+    for i in range(Nb_cligno):
         print("En dephassage")
 
         GPIO.output(LedR, GPIO.HIGH)
@@ -22,9 +21,9 @@ def cligno_dephase(Nb_cligno, tempo1, tempo2):
         time.sleep(tempo2)
 
 def cligno_phase(Nb_cligno, tempo1, tempo2):
-    count2 = 0
-    for count2 in range(Nb_cligno):
+    for i in range(Nb_cligno):
         print("en phase")
+
         GPIO.output(LedR, GPIO.HIGH)
         GPIO.output(LedV, GPIO.HIGH)
         time.sleep(tempo1)
@@ -34,7 +33,5 @@ def cligno_phase(Nb_cligno, tempo1, tempo2):
         time.sleep(tempo2)
 
 while True:
-
     cligno_dephase(7, 0.5, 1)
-
     cligno_phase(4, 0.8, 1.5)

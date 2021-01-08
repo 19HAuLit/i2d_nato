@@ -24,6 +24,7 @@ while True:
     count2 = 0
     while(count2 < 4):
         print("en phase")
+        
         GPIO.output(18, GPIO.HIGH)
         GPIO.output(23, GPIO.HIGH)
         time.sleep(0.8)
