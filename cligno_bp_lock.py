@@ -5,6 +5,7 @@ GPIO.setmode(GPIO.BCM)
 LedR = 18
 LedV = 23
 BP = 25
+lock_state = -1
 
 GPIO.setup(LedR, GPIO.OUT)
 GPIO.setup(LedV, GPIO.OUT)
@@ -38,8 +39,10 @@ while True:
 
     etat = GPIO.input(BP)
 
-    if(etat == 1):
-        cligno_dephase(1, 0.5, 0.5)
+    if(etat == 1 and lock_state != 1):
+        cligno_dephase(4, 0.4, 0.8)
+        lock_state = 1
 
-    elif(etat == 0):
-        cligno_phase(1, 0.5, 0.5)
+    elif(etat == 0 and lock_state != 0):
+        cligno_phase(6, 1, 0.6)
+        lock_state = 0
