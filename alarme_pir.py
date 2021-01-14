@@ -28,11 +28,10 @@ def Mode_auto():
         GPIO.output(buzzer, GPIO.HIGH)
     else:
         print("PIR detection")
-        for i in range(4):
-            GPIO.output(buzzer, GPIO.HIGH)
-            time.sleep(0.5)
-            GPIO.output(buzzer, GPIO.LOW)
-            time.sleep(0.5)
+        GPIO.output(buzzer, GPIO.HIGH)
+        time.sleep(0.5)
+        GPIO.output(buzzer, GPIO.LOW)
+        time.sleep(0.5)
 
 while True:
     etatinter = GPIO.input(inter)
