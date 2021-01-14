@@ -37,6 +37,7 @@ def Mode_auto():
 while True:
     etatinter = GPIO.input(inter)
     if(etatinter == 0):
+        print("Mode manuel")
         Mode_manuel()
     else:
         print("Mode auto")
